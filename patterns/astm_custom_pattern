@@ -1,0 +1,7 @@
+manufacturer (\w+)
+instrument ([A-z]{4,}[\d])
+timestamp ([0-9]{14})
+range ([0-9]+(\.[0-9]+)?-[0-9]+(\.[0-9]+)?)
+unitType ([a-zA-Z]+(\/[A-Z]+))
+ASTM_R ^R\|%{INT:recordId}+\|+\^+\^+\^+%{INT:sequenceId}+\^%{INT:testId}+\^%{WORD:analyte}+\|%{NUMBER:dataValue}+\|%{unitType:unit}+\|%{range}+\|+\|+\|%{WORD:finalResult}+\|+\|%{manufacturer:manufacturer}+\|%{timestamp}+\|%{timestamp}+\|%{instrument:instrument}+\|%{GREEDYDATA:Comments}
+ASTM_W ^R\|%{INT:recordId}+\|+\^+\^+\^+%{INT:sequenceId}+\^%{INT:testId}+\^%{WORD:analyte}+\|%{INT:dataValue}+\|%{unitType:unit}+\|%{range}+\|+\|+\|%{WORD:finalResult}+\|+\|%{manufacturer:manufacturer}+\|%{timestamp}+\|%{timestamp}+\|%{instrument:instrument}+\|%{GREEDYDATA:Comments}
